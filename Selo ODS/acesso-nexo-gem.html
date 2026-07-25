@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexo — Assistente Selo ODS UFAPE</title>
+<link rel="icon" type="image/png" href="img/nexo-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght,wdth@400,87.5;500,87.5;600,87.5;700,87.5&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-ods: #0A97D9;
+    --azul-titulo: #47576d;
+    --verde-ods: #1A7A4A;
+    --amarelo-ods: #F5C518;
+    --fundo: #F4F8FA;
+    --caixa: #EAEAEA;
+    --texto: #33414f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, var(--fundo) 0%, #ffffff 55%);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+  h1, h2, .subtitulo {
+    font-family: 'Tektur', 'Segoe UI', sans-serif;
+    font-stretch: semi-condensed;
+    color: var(--azul-titulo);
+  }
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+  }
+
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--caixa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(11, 61, 92, 0.10);
+    padding: 32px;
+    border-top: 6px solid var(--azul-ods);
+    flex-wrap: wrap;
+  }
+  .hero-texto { flex: 1 1 280px; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--verde-ods);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-size: 30px;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .subtitulo {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .hero-img {
+    flex: 0 0 220px;
+    max-width: 220px;
+  }
+  .hero-img img { width: 100%; display: block; }
+
+  /* CTA PRINCIPAL */
+  .cta-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--caixa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(11, 61, 92, 0.10);
+    padding: 28px 32px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-img {
+    flex: 0 0 140px;
+    max-width: 140px;
+    margin: -20px 0;
+  }
+  .cta-img img { width: 100%; display: block; }
+  .cta-conteudo { flex: 1 1 320px; }
+  .cta-conteudo p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+  }
+  .cta-conteudo strong { color: var(--azul-titulo); }
+  .botao {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .botao-primario {
+    background: var(--azul-ods);
+    color: #ffffff;
+    font-size: 17px;
+    padding: 16px 36px;
+    box-shadow: 0 6px 18px rgba(10, 151, 217, 0.35);
+  }
+  .botao-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(10, 151, 217, 0.45);
+  }
+  .nota {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #8098a5;
+  }
+
+  /* PLATAFORMA */
+  .plataforma-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--caixa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(11, 61, 92, 0.10);
+    padding: 24px 32px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .plataforma-texto h2 {
+    font-size: 20px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .plataforma-texto p {
+    margin: 0;
+    font-size: 14px;
+    color: #5c7080;
+  }
+  .botao-secundario {
+    background: var(--azul-ods);
+    color: #ffffff;
+    border: none;
+    font-size: 15px;
+    padding: 12px 26px;
+    box-shadow: 0 6px 18px rgba(10, 151, 217, 0.35);
+  }
+  .botao-secundario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(10, 151, 217, 0.45);
+  }
+
+  /* DOCUMENTOS */
+  .docs-section {
+    margin-top: 24px;
+    background: var(--caixa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(11, 61, 92, 0.10);
+    padding: 28px 32px;
+  }
+  .docs-section h2 {
+    font-size: 20px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .docs-section > p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #5c7080;
+  }
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .doc-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    background: var(--fundo);
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: background 0.15s ease;
+  }
+  .doc-card:hover { background: #e6eef2; }
+  .doc-icone {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--amarelo-ods);
+    color: #47576d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .doc-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--azul-titulo);
+    line-height: 1.3;
+  }
+  .doc-desc {
+    font-size: 12px;
+    color: #8098a5;
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #a9bac2;
+  }
+  footer img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 640px) {
+    .hero { flex-direction: column-reverse; text-align: center; }
+    .cta-section { flex-direction: column; text-align: center; }
+    .cta-img { margin: 0 0 -10px; }
+    .plataforma-section { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-texto">
+        <div class="eyebrow">Programa Selo ODS Educação IES 2026</div>
+        <h1>Oi, eu sou o Nexo 🤖💙</h1>
+        <p class="subtitulo">
+          Sou o tradutor de iniciativas da campanha Selo ODS aqui na UFAPE.
+          Me conta o que você faz — curso, projeto, campanha, pesquisa — que eu
+          te ajudo a transformar isso numa iniciativa pronta pra cadastrar na
+          plataforma.
+        </p>
+      </div>
+      <div class="hero-img">
+        <img src="img/nexo-banner.png" alt="Nexo, mascote do Selo ODS UFAPE, acenando">
+      </div>
+    </section>
+
+    <!-- CTA PRINCIPAL -->
+    <section class="cta-section">
+      <div class="cta-img">
+        <img src="img/nexo-cta.png" alt="Nexo apontando para o botão de conversa">
+      </div>
+      <div class="cta-conteudo">
+        <p>
+          <strong>Como funciona:</strong> clique no botão abaixo pra abrir nossa
+          conversa. Vou te perguntar, uma coisa de cada vez, o que falta saber
+          sobre sua iniciativa — público, local, datas, parcerias — e devolver
+          um texto pronto pro formulário do Selo Social, já com ODS e meta
+          sugeridos.
+        </p>
+        <a class="botao botao-primario" href="https://gemini.google.com/gem/4ffbf853a494" target="_blank" rel="noopener noreferrer">
+          Conversar com o Nexo →
+        </a>
+        <div class="nota">Abre em uma nova aba, usando sua conta Google institucional.</div>
+      </div>
+    </section>
+
+    <!-- PLATAFORMA -->
+    <section class="plataforma-section">
+      <div class="plataforma-texto">
+        <h2>Já traduziu sua iniciativa?</h2>
+        <p>Cadastre ou acompanhe suas iniciativas direto na plataforma Selo Social.</p>
+      </div>
+      <a class="botao botao-secundario" href="https://app.selosocial.org/participant" target="_blank" rel="noopener noreferrer">
+        Acessar plataforma
+      </a>
+    </section>
+
+    <!-- DOCUMENTOS -->
+    <section class="docs-section">
+      <h2>Documentos de apoio</h2>
+      <p>Material de referência oficial do programa, para consulta do coordenador.</p>
+      <div class="docs-grid">
+        <a class="doc-card" href="docs/guia-metas-locais-2026-web.pdf" target="_blank" rel="noopener noreferrer">
+          <div class="doc-icone">PDF</div>
+          <div>
+            <div class="doc-nome">Guia de Metas Locais 2026</div>
+            <div class="doc-desc">ODS e metas aplicáveis, com exemplos</div>
+          </div>
+        </a>
+        <a class="doc-card" href="docs/guia-participante-selo-social-2026-web.pdf" target="_blank" rel="noopener noreferrer">
+          <div class="doc-icone">PDF</div>
+          <div>
+            <div class="doc-nome">Guia do Participante 2026</div>
+            <div class="doc-desc">Campos do formulário e fluxo de aprovação</div>
+          </div>
+        </a>
+        <a class="doc-card" href="docs/regulamento-selo-ods-educacao-ies.pdf" target="_blank" rel="noopener noreferrer">
+          <div class="doc-icone">PDF</div>
+          <div>
+            <div class="doc-nome">Regulamento Selo ODS Educação IES</div>
+            <div class="doc-desc">Regras de certificação</div>
+          </div>
+        </a>
+        <a class="doc-card" href="docs/calendario-selo-social-2026.pdf" target="_blank" rel="noopener noreferrer">
+          <div class="doc-icone">PDF</div>
+          <div>
+            <div class="doc-nome">Calendário Selo Social 2026</div>
+            <div class="doc-desc">Prazos e datas oficiais</div>
+          </div>
+        </a>
+        <a class="doc-card" href="docs/guia-agenda-2030.pdf" target="_blank" rel="noopener noreferrer">
+          <div class="doc-icone">PDF</div>
+          <div>
+            <div class="doc-nome">Guia Agenda 2030</div>
+            <div class="doc-desc">Contexto geral dos ODS</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <img src="img/nexo-favicon.png" alt="Nexo">
+      DCOM/UFAPE
+    </footer>
+
+  </div>
+</body>
+</html>
