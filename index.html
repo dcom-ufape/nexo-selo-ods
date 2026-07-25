@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,9 +23,26 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg, var(--fundo) 0%, #ffffff 55%);
+    background: var(--fundo);
     color: var(--texto);
     min-height: 100vh;
+  }
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: calc(-100vh + 300px);
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .bg-video::-webkit-media-controls,
+  .bg-video::-webkit-media-controls-enclosure,
+  .bg-video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 0 !important;
   }
   h1, h2, .subtitulo {
     font-family: 'Tektur', 'Segoe UI', sans-serif;
@@ -32,9 +50,9 @@
     color: var(--azul-titulo);
   }
   .wrap {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 24px 64px;
+    padding: 40px 32px 64px;
   }
 
   /* HERO */
@@ -239,6 +257,7 @@
   }
 
   @media (max-width: 640px) {
+    .bg-video { left: calc(-100vh + 140px); }
     .hero { flex-direction: column-reverse; text-align: center; }
     .cta-section { flex-direction: column; text-align: center; }
     .cta-img { margin: 0 0 -10px; }
@@ -247,16 +266,19 @@
 </style>
 </head>
 <body>
+  <video class="bg-video" id="bgVideo" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+    <source src="video/nexo-loop.mp4" type="video/mp4">
+  </video>
   <div class="wrap">
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-texto">
         <div class="eyebrow">Programa Selo ODS Educação IES 2026</div>
-        <h1>Oi, eu sou o Nexo 🤖</h1>
+        <h1>Oi, eu sou o Nexo 🤖💙</h1>
         <p class="subtitulo">
           Sou o tradutor de iniciativas da campanha Selo ODS aqui na UFAPE.
-          Me conta o que você faz, curso, projeto, campanha, pesquisa, que eu
+          Me conta o que você faz — curso, projeto, campanha, pesquisa — que eu
           te ajudo a transformar isso numa iniciativa pronta pra cadastrar na
           plataforma.
         </p>
@@ -275,7 +297,7 @@
         <p>
           <strong>Como funciona:</strong> clique no botão abaixo pra abrir nossa
           conversa. Vou te perguntar, uma coisa de cada vez, o que falta saber
-          sobre sua iniciativa, público, local, datas, parcerias e devolver
+          sobre sua iniciativa — público, local, datas, parcerias — e devolver
           um texto pronto pro formulário do Selo Social, já com ODS e meta
           sugeridos.
         </p>
@@ -346,5 +368,15 @@
     </footer>
 
   </div>
+  <script>
+    var bgVideo = document.getElementById('bgVideo');
+    if (bgVideo) {
+      bgVideo.muted = true;
+      var tentarTocar = function () { bgVideo.play().catch(function () {}); };
+      tentarTocar();
+      document.addEventListener('click', tentarTocar, { once: true });
+      document.addEventListener('touchstart', tentarTocar, { once: true });
+    }
+  </script>
 </body>
 </html>
