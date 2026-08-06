@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tektur:wght,wdth@400,87.5;500,87.5;600,87.5;700,87.5&display=swap" rel="stylesheet">
 <!-- Analytics GoatCounter: troque MYCODE pelo código do seu site em goatcounter.com -->
-<script data-goatcounter="https://nexoseloods.goatcounter.com/count"async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
   :root {
     --azul-ods: #0A97D9;
@@ -205,6 +204,51 @@
     box-shadow: 0 10px 24px rgba(10, 151, 217, 0.45);
   }
 
+  /* INFORMAÇÕES IMPORTANTES */
+  .info-section {
+    margin-top: 24px;
+    background: var(--caixa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(11, 61, 92, 0.10);
+    padding: 28px 32px;
+    border-left: 6px solid var(--amarelo-ods);
+  }
+  .info-section h2 {
+    font-size: 20px;
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .info-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .info-lista li {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto);
+  }
+  .info-numero {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--azul-ods);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .info-lista strong { color: var(--azul-titulo); }
+
   /* DOCUMENTOS */
   .docs-section {
     margin-top: 24px;
@@ -301,10 +345,10 @@
     <section class="hero">
       <div class="hero-texto">
         <div class="eyebrow">Programa Selo ODS Educação IES 2026</div>
-        <h1>Oi, eu sou o Nexo 🤖</h1>
+        <h1>Oi, eu sou o Nexo 🤖💙</h1>
         <p class="subtitulo">
           Sou o tradutor de iniciativas da campanha Selo ODS aqui na UFAPE.
-          Me conta o que você faz, curso, projeto, campanha, pesquisa, que eu
+          Me conta o que você faz — curso, projeto, campanha, pesquisa — que eu
           te ajudo a transformar isso numa iniciativa pronta pra cadastrar na
           plataforma.
         </p>
@@ -312,6 +356,33 @@
       <div class="hero-img">
         <img src="img/nexo-banner.png" alt="Nexo, mascote do Selo ODS UFAPE, acenando">
       </div>
+    </section>
+
+    <!-- INFORMAÇÕES IMPORTANTES -->
+    <section class="info-section">
+      <h2>Antes de começar, alguns combinados</h2>
+      <ol class="info-lista">
+        <li>
+          <span class="info-numero">1</span>
+          <span>Sou uma inteligência artificial: te ajudo a interpretar seu trabalho e traduzi-lo em uma ou mais iniciativas para a plataforma Selo ODS. Trate minhas respostas como <strong>sugestão de partida</strong>, não como palavra final.</span>
+        </li>
+        <li>
+          <span class="info-numero">2</span>
+          <span>A revisão, o envio e os ajustes ficam sempre com você, coordenador. Nenhuma IA substitui seu olhar crítico e pessoal sobre o próprio trabalho.</span>
+        </li>
+        <li>
+          <span class="info-numero">3</span>
+          <span>Passar por mim não garante aprovação imediata — quem avalia e decide é a equipe do Selo ODS.</span>
+        </li>
+        <li>
+          <span class="info-numero">4</span>
+          <span>Você pode descrever seu trabalho no chat, anexar arquivos ou imagens, e responder as perguntas que eu fizer de volta. Quanto mais detalhes você me der, mais completa fica a sugestão. Só não compartilhe <strong>dados inéditos ou sigilosos</strong> — isso vale pra mim e pra qualquer IA que você usar.</span>
+        </li>
+        <li>
+          <span class="info-numero">5</span>
+          <span>O que você me conta fica visível só pra você. Não esqueça de entrar com sua conta <strong>@ufape.edu.br</strong> antes de começar.</span>
+        </li>
+      </ol>
     </section>
 
     <!-- CTA PRINCIPAL -->
@@ -323,7 +394,7 @@
         <p>
           <strong>Como funciona:</strong> clique no botão abaixo pra abrir nossa
           conversa. Vou te perguntar, uma coisa de cada vez, o que falta saber
-          sobre sua iniciativa, público, local, datas, parcerias e devolver
+          sobre sua iniciativa — público, local, datas, parcerias — e devolver
           um texto pronto pro formulário do Selo Social, já com ODS e meta
           sugeridos.
         </p>
